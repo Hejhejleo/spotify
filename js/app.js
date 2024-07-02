@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-      countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      countdownElement.textContent = `${days}d`;
 
       if (timeDifference < 0) {
         countdownElement.textContent = "Released!";
