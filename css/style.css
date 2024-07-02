@@ -1,12 +1,14 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #121212;
+  background-color: #138a3d;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /*height: 100vh;*/
   margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 #playlist-container {
@@ -18,12 +20,12 @@ body {
 
 .playlist-item {
   text-align: center;
-  width: 200px; /* Fixed width */
+  width: 300px; /* Fixed width */
 }
 
 .playlist-item .image-container {
-  width: 200px; /* Fixed width */
-  height: 200px; /* Fixed height */
+  width: 300px; /* Fixed width */
+  height: 300px; /* Fixed height */
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -39,4 +41,33 @@ body {
 
 .playlist-item .image-container img:hover {
   transform: scale(1.1);
+}
+
+.countdown-container {
+  margin-top: 10px;
+}
+
+.countdown {
+  font-size: 18px;
+  color: #000000;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #138a3d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2f2f2f;
 }
