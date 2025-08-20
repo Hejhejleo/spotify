@@ -6,20 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     countdownElements.forEach(countdownElement => {
       const monthIndex = parseInt(countdownElement.getAttribute('data-month'), 10);
-      const year = now.getFullYear();
-      const lastDayOfMonth = new Date(year, monthIndex + 1, 0); // 0th day of next month gives last day of current month
+      const year = parseInt(countdownElement.getAttribute('data-year'), 10); // 👈 read year too
+      const lastDayOfMonth = new Date(year, monthIndex + 1, 0); 
       const timeDifference = lastDayOfMonth - now;
+
+      if (timeDifference <= 0) {
+        countdownElement.textContent = "Released!";
+        return;
+      }
 
       const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-      countdownElement.textContent = `${days}d`;
-
-      if (timeDifference < 0) {
-        countdownElement.textContent = "Released!";
-      }
+      countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     });
   }
 
